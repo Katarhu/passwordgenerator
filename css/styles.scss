@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Fruktur&family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;700&family=PT+Sans&family=Space+Mono&display=swap');
+@import "nullstyle.scss";
+
+
+body{
+    font-family: 'Fruktur', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'PT Sans', sans-serif;
+    font-family: 'Space Mono', monospace;
+    background: url('../img/mainbg.gif') 0 0/100% 100% no-repeat;
+    display: flex; justify-content: center; align-items: center;
+}
+
+.test{
+    width: 40%;
+    height: 60%;
+    background: #fff;
+    animation-name: appear;
+    animation-duration: 2s;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    box-shadow: 5px 5px 1px #fff;
+    display: flex; align-items: center; flex-direction: column;
+}
+.text{
+    margin: 25% 0 0 0;
+    width: 18.3ch;
+    height: fit-content;
+    font-size: 2vw;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.75);
+    border-right: 4px solid #fff;
+    animation: flash-border 0.75s step-end infinite, 
+    printed 5s steps(18);
+}
+.main{
+    position: relative;
+    margin: 7% 0 0 0;
+    height: 10%;
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.inp{
+    flex: 0 0 50%;
+    height: 100%;
+    text-align: center;
+    color: white;
+    border-radius: 6px;
+    background: #000;
+    border: 1px solid #fff;
+    box-shadow: 0px 3px 1px #fff;
+}
+.button{
+    flex: 0 0 20%;
+    height: 100%;
+    border-radius: 5px;
+    background: #000;
+    border: 1px solid #fff;
+    box-shadow: 0px 3px 1px #fff;
+    color: #fff;
+}
+button:hover{
+    color: pink;
+}
+button:active{
+    position: relative;
+    top: 3px;
+    box-shadow: none;
+}
+.green{
+    color: green;
+}
+.end{
+    margin: 5% 0 0 0;
+}
+.end__text{
+    color: white;
+    text-align: center;
+    margin: 0 0 5% 0;
+}
+.endinp{
+    width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media(max-width:1000px){
+    .main{
+        width: 90%;
+    }
+}
+
+@media(max-width:800px){
+    .test{
+        height: 50%;
+    }
+    .main{
+        flex-direction: column;
+        height: 25%;
+        align-items: space-evenly;
+    }
+    .inp{
+        flex: 0 0 20%;
+    }
+    .button{
+        flex: 0 0 10%;
+    }
+}
+
+
+
+
+
+@keyframes appear {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes flash-border{
+    0%  { border-color: #fff;}
+    50% { border-color: transparent;}
+    100%  { border-color: #fff;}
+}
+@keyframes printed {
+    0% {width: 0;}
+    100% {width: 18.3ch;}
+}
